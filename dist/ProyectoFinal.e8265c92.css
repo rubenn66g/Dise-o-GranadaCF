@@ -657,7 +657,12 @@ button {
   background-color: #fff;
   border: .1rem solid #c8102e;
   border-radius: .5rem;
+  transition: transform .3s;
   overflow: hidden;
+}
+
+.player-card:hover {
+  transform: scale(1.03);
 }
 
 .player-card__media img {
@@ -713,7 +718,12 @@ button {
   background-color: #fff;
   border: .1rem solid #c8102e;
   border-radius: .5rem;
+  transition: transform .3s;
   overflow: hidden;
+}
+
+.news-card:hover {
+  transform: scale(1.03);
 }
 
 .news-card__media img {

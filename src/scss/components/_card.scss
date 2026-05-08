@@ -3,8 +3,12 @@
 .player-card {
     background-color: core.color("blanco");
     overflow: hidden;
+    transition: transform 0.3s ease;
     @include core.border_radius;
 
+    &:hover {
+        transform: scale(1.03);
+    }
     &__media img {
         width: 100%;
         aspect-ratio: 3 / 4;
@@ -52,7 +56,12 @@
 .news-card {
     background-color: core.color("blanco");
     overflow: hidden;
+    transition: transform 0.3s ease;
     @include core.border_radius;
+
+    &:hover {
+        transform: scale(1.03);
+    }
 
     &__media img {
         width: 100%;
