@@ -1,3 +1,4 @@
+// layout/_footer.scss
 @use "../abstracts/" as core;
 
 .footer {
@@ -15,6 +16,11 @@
 
     &__logo {
         width: 15rem;
+
+        @include core.media("mobile") {
+            width: 8rem;
+            margin: 0 auto;
+        }
     }
 
     &__info {
@@ -22,30 +28,50 @@
             font-size: core.font-size("xl");
             color: core.color("gris-claro");
             margin-bottom: 1rem;
+
+            @include core.media("mobile") {
+                font-size: core.font-size("sm");
+            }
         }
     }
 
     &__social {
         @include core.flexposition(row, flex-start, center);
         gap: 2rem;
+
+        @include core.media("mobile") {
+            justify-content: center;
+        }
     }
 
     &__social-link {
-    img {
-        width: 6rem;
-        height: 6rem;
-        object-fit: contain;
-        transition: transform 0.2s ease;
+        img {
+            width: 6rem;
+            height: 6rem;
+            object-fit: contain;
+            transition: transform 0.2s ease;
 
-        &:hover {
-            transform: scale(1.1);
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        @include core.media("mobile") {
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
         }
     }
-}
 
     &__links {
         @include core.flexposition(column, flex-start, flex-start);
         gap: 1.2rem;
+
+        @include core.media("mobile") {
+            @include core.flexposition(row, center, center);
+            flex-wrap: wrap;
+        }
     }
 
     &__link {
@@ -57,9 +83,15 @@
             color: core.color("rojo");
             text-decoration: none;
         }
+
+        @include core.media("mobile") {
+            font-size: core.font-size("sm");
+        }
     }
 
     @include core.media("tablet") {
+        padding: 4rem 2rem;
+
         &__content {
             @include core.flexposition(column, center, center);
             text-align: center;

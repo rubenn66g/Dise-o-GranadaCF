@@ -8,6 +8,10 @@
         @include core.flex(row, space-around, center);
         flex-wrap: wrap;
         gap: 2rem;
+
+        @include core.media("mobile") {
+            @include core.flexposition(column, center, center);
+        }
     }
 
     &-item {
@@ -18,15 +22,27 @@
             font-weight: 900;
             color: core.color("blanco");
             line-height: 1;
+
+            @include core.media("tablet") {
+                font-size: core.font-size("3xl");
+            }
+
+            @include core.media("mobile") {
+                font-size: core.font-size("2xl");
+            }
         }
 
         &__label {
-            font-size: core.font-size("sm");
+            font-size: core.font-size("lg");
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: rgba(255, 255, 255, 0.8);
             margin-top: 0.8rem;
+
+            @include core.media("mobile") {
+                font-size: core.font-size("sm");
+            }
         }
     }
 }

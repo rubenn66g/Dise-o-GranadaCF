@@ -11,16 +11,36 @@
         h2 {
             font-size: core.font-size("4xl");
             color: core.color("negro");
+
+            @include core.media("mobile") {
+                font-size: core.font-size("2xl");
+            }
         }
 
         p {
             font-size: core.font-size("xl");
             color: core.color("gris-medio");
             margin-top: 0.8rem;
+
+            @include core.media("mobile") {
+                font-size: core.font-size("sm");
+            }
         }
+    }
+
+    @include core.media("mobile") {
+        padding: 3rem 1.5rem;
     }
 }
 
 .players {
     @include core.grid-flexible(16rem, 2rem);
+
+    @include core.media("tablet") {
+        @include core.grid-flexible(20rem, 2rem);
+    }
+
+    @include core.media("mobile") {
+        @include core.grid-flexible(28rem, 1.5rem);
+    }
 }

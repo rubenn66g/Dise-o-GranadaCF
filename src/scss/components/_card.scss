@@ -20,16 +20,28 @@
     &__name {
         font-size: core.font-size("2xl");
         color: core.color("negro");
+
+        @include core.media("mobile") {
+            font-size: core.font-size("lg");
+        }
     }
 
     &__position {
         font-size: core.font-size("xl");
         color: core.color("rojo");
+
+        @include core.media("mobile") {
+            font-size: core.font-size("md");
+        }
     }
 
     &__number {
         font-size: core.font-size("3xl");
         color: core.color("gris-claro");
+
+        @include core.media("mobile") {
+            font-size: core.font-size("2xl");
+        }
     }
 
     &--destacado {
@@ -57,6 +69,10 @@
         font-weight: 700;
         text-transform: uppercase;
         color: core.color("rojo");
+
+        @include core.media("mobile") {
+            font-size: core.font-size("sm");
+        }
     }
 
     &__title {
@@ -64,6 +80,10 @@
         font-weight: 700;
         color: core.color("negro");
         margin-top: core.spacing("xs");
+
+        @include core.media("mobile") {
+            font-size: core.font-size("lg");
+        }
     }
 
     &__date {
@@ -71,6 +91,10 @@
         color: core.color("gris-claro");
         margin-top: core.spacing("xs");
         display: block;
+
+        @include core.media("mobile") {
+            font-size: core.font-size("xs");
+        }
     }
 
     &--destacado {

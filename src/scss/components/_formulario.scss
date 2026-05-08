@@ -1,0 +1,44 @@
+@use "../abstracts/" as core;
+
+.abono-form {
+    @include core.flexposition(column, center, stretch);
+    gap: 2rem;
+    max-width: 56rem;
+    margin: 0 auto;
+
+    &__group {
+        @include core.flexposition(column, flex-start, flex-start);
+        gap: 0.8rem;
+    }
+
+    &__label {
+        font-size: core.font-size("lg");
+        font-weight: 700;
+        text-transform: uppercase;
+        color: core.color("gris-medio");
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem 1.6rem;
+        font-size: core.font-size("md");
+        border: 0.2rem solid core.color("gris-claro");
+        border-radius: 0.4rem;
+        background-color: core.color("blanco");
+        color: core.color("negro");
+        transition: border-color 0.2s ease;
+
+        &:focus {
+            border-color: core.color("rojo");
+            outline: none;
+        }
+    }
+
+    .btn-primary {
+        align-self: flex-start;
+
+        @include core.media("mobile") {
+            align-self: stretch;
+        }
+    }
+}

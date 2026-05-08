@@ -5,10 +5,20 @@
 
     &-list {
         gap: 4rem;
-        
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        @include core.media("tablet") {
+            gap: 1.5rem;
+            justify-content: center;
+        }
     }
 
     &-link {
         font-size: core.font-size("2xl");
+
+        @include core.media("tablet") {
+            font-size: core.font-size("xl");
+        }
     }
 }

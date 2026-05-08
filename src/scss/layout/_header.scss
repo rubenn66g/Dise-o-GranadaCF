@@ -19,8 +19,46 @@
             color: core.color("gris-claro");
         }
     }
+
+    @include core.media("tablet") {
+        @include core.flexposition(column, center, center);
+        padding: 1rem;
+        gap: 1rem;
+
+        .heading {
+            &-text {
+                font-size: core.font-size("xl");
+            }
+
+            h2 {
+                font-size: core.font-size("sm");
+            }
+        }
+    }
+
+    @include core.media("mobile") {
+        padding: 0.8rem;
+
+        .heading {
+            &-text {
+                font-size: core.font-size("lg");
+            }
+
+            h2 {
+                font-size: core.font-size("xs");
+            }
+        }
+    }
 }
 
 .logo__container {
-    width: 10rem;
+    width: 12rem;
+
+    @include core.media("tablet") {
+        width: 8rem;
+    }
+
+    @include core.media("mobile") {
+        width: 6rem;
+    }
 }

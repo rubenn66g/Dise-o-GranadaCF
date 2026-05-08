@@ -1,7 +1,7 @@
 @use "../abstracts/" as core;
 
 .hero {
-   position: relative;
+    position: relative;
     min-height: 75vh;
     background-image: url("../assets/img/estadio.jpg");
     background-size: cover;
@@ -14,7 +14,12 @@
         z-index: 2;
         text-align: center;
         padding: 2rem;
+
+        @include core.media("mobile") {
+            padding: 1rem;
+        }
     }
+
     &__title {
         font-size: core.font-size("hero");
         color: core.color("blanco");
@@ -29,7 +34,7 @@
         }
 
         @include core.media("mobile") {
-            font-size: core.font-size("3xl");
+            font-size: core.font-size("2xl");
         }
     }
 
@@ -39,8 +44,14 @@
         max-width: 60rem;
         margin: 1.6rem auto;
 
+        @include core.media("tablet") {
+            font-size: core.font-size("md");
+            max-width: 40rem;
+        }
+
         @include core.media("mobile") {
-            font-size: core.font-size("base");
+            font-size: core.font-size("sm");
+            max-width: 30rem;
         }
     }
 
@@ -48,12 +59,25 @@
         @include core.flex(row, center, center);
         gap: 1.6rem;
         flex-wrap: wrap;
+
+        @include core.media("mobile") {
+            @include core.flex(column, center, center);
+            gap: 1rem;
+        }
     }
 
     &__box {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 3rem 4rem;
-    margin-bottom: 2rem;
-    display: inline-block;
-}
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 3rem 4rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+
+        @include core.media("tablet") {
+            padding: 2rem 3rem;
+        }
+
+        @include core.media("mobile") {
+            padding: 1.5rem 2rem;
+        }
+    }
 }
