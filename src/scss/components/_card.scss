@@ -1,0 +1,79 @@
+@use "../abstracts/" as core;
+
+.player-card {
+    background-color: core.color("blanco");
+    overflow: hidden;
+    @include core.border_radius;
+
+    &__media img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__content {
+        padding: core.spacing("md");
+        text-align: center;
+    }
+
+    &__name {
+        font-size: core.font-size("2xl");
+        color: core.color("negro");
+    }
+
+    &__position {
+        font-size: core.font-size("xl");
+        color: core.color("rojo");
+    }
+
+    &__number {
+        font-size: core.font-size("3xl");
+        color: core.color("gris-claro");
+    }
+
+    &--destacado {
+        border-top: 0.4rem solid core.color("rojo");
+    }
+}
+
+.news-card {
+    background-color: core.color("blanco");
+    overflow: hidden;
+    @include core.border_radius;
+
+    &__media img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: core.spacing("md");
+    }
+
+    &__category {
+        font-size: core.font-size("lg");
+        font-weight: 700;
+        text-transform: uppercase;
+        color: core.color("rojo");
+    }
+
+    &__title {
+        font-size: core.font-size("xl");
+        font-weight: 700;
+        color: core.color("negro");
+        margin-top: core.spacing("xs");
+    }
+
+    &__date {
+        font-size: core.font-size("md");
+        color: core.color("gris-claro");
+        margin-top: core.spacing("xs");
+        display: block;
+    }
+
+    &--destacado {
+        border-top: 0.4rem solid core.color("rojo");
+    }
+}

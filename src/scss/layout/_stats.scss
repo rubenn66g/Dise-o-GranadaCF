@@ -1,0 +1,32 @@
+@use "../abstracts/" as core;
+
+.stats {
+    background-color: core.color("rojo");
+    padding: 4rem 2rem;
+
+    &-list {
+        @include core.flex(row, space-around, center);
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &-item {
+        text-align: center;
+
+        &__number {
+            font-size: core.font-size("4xl");
+            font-weight: 900;
+            color: core.color("blanco");
+            line-height: 1;
+        }
+
+        &__label {
+            font-size: core.font-size("sm");
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.8rem;
+        }
+    }
+}

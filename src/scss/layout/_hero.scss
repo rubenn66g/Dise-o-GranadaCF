@@ -1,0 +1,59 @@
+@use "../abstracts/" as core;
+
+.hero {
+   position: relative;
+    min-height: 75vh;
+    background-image: url("../assets/img/estadio.jpg");
+    background-size: cover;
+    background-position: center;
+    @include core.flex(column, center, center);
+    @include core.overlay(0.6);
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 2rem;
+    }
+    &__title {
+        font-size: core.font-size("hero");
+        color: core.color("blanco");
+        text-transform: uppercase;
+
+        span {
+            color: core.color("rojo");
+        }
+
+        @include core.media("tablet") {
+            font-size: core.font-size("4xl");
+        }
+
+        @include core.media("mobile") {
+            font-size: core.font-size("3xl");
+        }
+    }
+
+    &__subtitle {
+        font-size: core.font-size("xl");
+        color: core.color("blanco");
+        max-width: 60rem;
+        margin: 1.6rem auto;
+
+        @include core.media("mobile") {
+            font-size: core.font-size("base");
+        }
+    }
+
+    &__ctas {
+        @include core.flex(row, center, center);
+        gap: 1.6rem;
+        flex-wrap: wrap;
+    }
+
+    &__box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3rem 4rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+}

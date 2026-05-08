@@ -1,0 +1,14 @@
+@use "../abstracts/" as core;
+
+.main-nav {
+    @include core.navigation();
+
+    &-list {
+        gap: 4rem;
+        
+    }
+
+    &-link {
+        font-size: core.font-size("2xl");
+    }
+}

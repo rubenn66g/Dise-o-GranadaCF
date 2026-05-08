@@ -1,0 +1,26 @@
+@use "../abstracts/" as core;
+
+.header {
+    @include core.flexposition(row, space-between, center);
+    padding: 0.8rem 4rem;
+    background-color: core.color("negro");
+    border-bottom: 0.3rem solid core.color("rojo");
+
+    .heading {
+        text-align: center;
+
+        &-text {
+            font-size: core.font-size("3xl");
+            color: core.color("blanco");
+        }
+
+        h2 {
+            font-size: core.font-size("xl");
+            color: core.color("gris-claro");
+        }
+    }
+}
+
+.logo__container {
+    width: 10rem;
+}

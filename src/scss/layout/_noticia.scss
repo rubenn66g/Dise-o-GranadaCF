@@ -1,0 +1,26 @@
+@use "../abstracts/" as core;
+
+.news-list {
+    padding: 4rem 2rem;
+    background-color: core.color("blanco");
+
+    .section__heading {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: core.font-size("4xl");
+            color: core.color("negro");
+        }
+
+        p {
+            font-size: core.font-size("xl");
+            color: core.color("gris-medio");
+            margin-top: 0.8rem;
+        }
+    }
+}
+
+.news {
+    @include core.grid-flexible(28rem, 2rem);
+}

@@ -1,0 +1,26 @@
+@use "../abstracts/" as core;
+
+.players-list {
+    padding: 4rem 2rem;
+    background-color: core.color("gris-fondo");
+
+    .section__heading {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: core.font-size("4xl");
+            color: core.color("negro");
+        }
+
+        p {
+            font-size: core.font-size("xl");
+            color: core.color("gris-medio");
+            margin-top: 0.8rem;
+        }
+    }
+}
+
+.players {
+    @include core.grid-flexible(16rem, 2rem);
+}

@@ -1,0 +1,57 @@
+@use "../abstracts/" as core;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 1.6rem;
+    font-family: core.font("body");
+    color: core.color("negro");
+    background-color: core.color("blanco");
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: 2s;
+}
+
+ul {
+    list-style: none;
+}
+
+* {
+    font-family: core.font("body");
+}
+
+h1, h2, h3, h4 {
+    font-family: core.font("heading");
+    color: core.color("negro");
+    line-height: 1.1;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}

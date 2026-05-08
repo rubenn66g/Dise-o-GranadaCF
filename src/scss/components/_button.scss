@@ -1,0 +1,33 @@
+@use "../abstracts/" as core;
+
+.btn {
+    padding: 0.8rem 1.6rem;
+    font-size: core.font-size("lg");
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+
+    &-primary {
+        background-color: core.color("rojo");
+        color: core.color("blanco");
+
+        &:hover {
+            background-color: core.color("rojo-oscuro");
+            text-decoration: none;
+        }
+    }
+
+    &-secondary {
+        background-color: transparent;
+        color: core.color("blanco");
+        border: 0.2rem solid core.color("blanco");
+
+        &:hover {
+            background-color: core.color("blanco");
+            color: core.color("rojo");
+            text-decoration: none;
+        }
+    }
+}

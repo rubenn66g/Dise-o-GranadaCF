@@ -1,0 +1,120 @@
+@use "variables" as vars;
+@use "sass:map";
+@use "sass:color";
+
+/// Aplica un borde sólido y un radio de esquina estándar
+/// @group Estilos Base
+@mixin border_radius {
+    border: 0.1rem solid vars.color("rojo");
+    border-radius: 0.5rem;
+}
+
+/// Configuración rápida de Flexbox
+/// @group Layout
+/// @param {String} $direction [row] - Dirección del flex
+/// @param {String} $justifycontent [center] - Alineación horizontal
+/// @param {String} $alignitem [center] - Alineación vertical
+@mixin flexposition($direction: row, $justifycontent: center, $alignitem: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignitem;
+}
+
+/// Layout básico de grid con columnas predefinidas
+/// @group Layout
+@mixin layout_basico() {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 2rem;
+}
+
+/// Crea una rejilla flexible con columnas auto-ajustables
+/// @group Layout
+/// @param {Number} $min-size [18rem] - Tamaño mínimo de cada columna
+/// @param {Number} $gap [1.5rem] - Espaciado entre celdas
+@mixin grid-flexible($min-size: 18rem, $gap: 1.5rem) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+    gap: $gap;
+}
+
+/// Generador de Media Queries basado en el mapa $sizes
+/// @group Responsive
+/// @param {String} $clave - Clave del mapa $sizes: mobile | tablet | laptop | desktop
+@mixin media($clave) {
+    $size: map.get(vars.$sizes, $clave);
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+/// Estilos de navegación reutilizables
+/// @group Layout
+@mixin navigation() {
+    &-list {
+        @include flexposition(row, space-around);
+        height: 100%;
+    }
+    &-item {
+        list-style-type: none;
+    }
+    &-link {
+        color: vars.color("blanco");
+        font-size: vars.font-size("sm");
+        text-decoration: none;
+        transition: all 0.5s;
+        &:hover {
+            color: vars.color("rojo");
+        }
+    }
+}
+
+/// Cabeceras dinámicas h1 a h3
+/// @group Tipografía
+@mixin cabeceras {
+    @for $i from 1 through 3 {
+        h#{$i} {
+            font-family: vars.font("heading");
+            font-size: vars.font-size("2xl");
+            font-weight: 300;
+        }
+    }
+}
+
+/// Flex con dirección, justificado y alineación configurables
+/// @group Layout
+/// @param {String} $direction [row] - Dirección del flex
+/// @param {String} $justify [center] - justify-content
+/// @param {String} $align [center] - align-items
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+/// Overlay semitransparente sobre un elemento con position relative
+/// @group Visual
+/// @param {Number} $opacity [0.5] - Opacidad del overlay
+@mixin overlay($opacity: 0.5) {
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: vars.color("negro");
+        opacity: $opacity;
+    }
+}
+
+/// Tipografía de título con fuente heading
+/// @group Tipografía
+/// @param {String} $size - Clave del mapa $font-sizes
+@mixin titulo($size) {
+    font-family: #{vars.font("heading")};
+    font-size: vars.font-size($size);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
